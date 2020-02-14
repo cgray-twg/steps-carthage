@@ -294,7 +294,7 @@ func main() {
 	log.Infof("Running Carthage command")
 
 	args := append([]string{configs.CarthageCommand}, customOptions...)
-	cmd := command.New("carthage", args...)
+	cmd := command.New("XCODE_XCCONFIG_FILE=$XCODE_XCCONFIG_FILE carthage", args...)
 
 	if configs.GithubAccessToken != "" {
 		log.Printf("Appending GITHUB_ACCESS_TOKEN to process environments")
